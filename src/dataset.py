@@ -2,7 +2,6 @@ import numpy as np
 import pandas as pd
 
 from pathlib import Path
-from torch.utils.data import Dataset
 
 PROCESSED_DIR = Path("data/processed")
 TRAIN_PATH = PROCESSED_DIR / "train.csv"
@@ -39,11 +38,6 @@ def encode_cell_type(cell_type):
     """
     Converts a cell type string into an integer label.
     """
-    CELL_MAPPING = {
-        "HepG2": 0,
-        "K562": 1,
-        "WTC11": 2,
-    }
 
     return np.array(
         [CELL_MAPPING[c] for c in cell_type],
