@@ -41,9 +41,8 @@ cell-type-aware-enhancer-prediction/
 │   └── processed/
 │
 ├── models/
-├── models/
 ├── results/
-│   └── figures/
+├── figures/
 |
 ├── src/
 │   ├── train.py
