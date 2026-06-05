@@ -40,11 +40,11 @@ cell-type-aware-enhancer-prediction/
 │   ├── raw/
 │   └── processed/
 │
-├── outputs_2/
-│   ├── models/
-│   ├── results/
+├── models/
+├── models/
+├── results/
 │   └── figures/
-│
+|
 ├── src/
 │   ├── train.py
 │   ├── evaluate.py
