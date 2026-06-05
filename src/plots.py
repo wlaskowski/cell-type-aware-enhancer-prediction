@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 RESULTS_DIR = Path("results")
 FIGURES_DIR = Path("figures")
-FIGURES_DIR.mkdir(exist_ok=True)
+FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
 VARIANTS = ["baseline", "embedding", "attention", "full"]
 
