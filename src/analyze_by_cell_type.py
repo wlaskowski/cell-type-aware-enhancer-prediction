@@ -65,6 +65,7 @@ def main():
         plt.ylabel("Predicted activity")
         plt.title(f"Predicted vs True: {cell_type}")
 
+        plt.grid(True, alpha=0.3)
         plt.tight_layout()
         plt.savefig(
             FIGURES_DIR / f"{cell_type}_predicted_vs_true.png",
