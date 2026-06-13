@@ -1,4 +1,3 @@
-````markdown
 # Cell-Type-Aware Enhancer Activity Prediction
 
 ## Overview
@@ -179,4 +178,3 @@ python src/analyze_by_cell_type.py
 ## Author
 
 Wojciech Laskowski
-````
