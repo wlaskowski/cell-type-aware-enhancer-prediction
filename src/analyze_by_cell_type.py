@@ -1,3 +1,7 @@
+"""
+Analyze the performance of the best model separately for each cell type
+"""
+
 from pathlib import Path
 
 import matplotlib.pyplot as plt
@@ -12,6 +16,7 @@ PROCESSED_DIR = Path("data/processed")
 
 FIGURES_DIR.mkdir(parents=True, exist_ok=True)
 
+# manualy selecting the best performing model - could be improved and automated :) 
 BEST_MODEL = "embedding"
 
 CELL_COLORS = {
@@ -22,9 +27,14 @@ CELL_COLORS = {
 
 
 def compute_cell_type_metrics(df):
+    """
+    Calculate evaluation metrics for each cell type
+    """
     rows = []
 
+    # dividing test results into separate cell gropus
     for cell_type, group in df.groupby("cell_type"):
+        
         y_true = group["target"]
         y_pred = group["prediction"]
 
@@ -46,6 +56,9 @@ def compute_cell_type_metrics(df):
 
 
 def plot_predicted_vs_true_by_cell_type(df):
+    """
+    Predicted vs true scatter plots for separate cell types
+    """
     for cell_type, group in df.groupby("cell_type"):
         plt.figure(figsize=(6, 6))
 
@@ -68,8 +81,12 @@ def plot_predicted_vs_true_by_cell_type(df):
 
 
 def plot_cell_type_performance(metrics_df, metric):
+    """
+    Bar plot comparing one metric across cell types
+    """
     plt.figure(figsize=(6, 4))
 
+    # one plot for each cell type
     bars = plt.bar(
         metrics_df["cell_type"],
         metrics_df[metric],
